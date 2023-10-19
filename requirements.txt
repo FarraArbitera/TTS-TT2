@@ -1,0 +1,12 @@
+tqdm
+resampy
+git+https://github.com/wkentaro/gdown.git
+unidecode
+matplotlib
+torch
+scipy
+iprogress
+ipywidgets
+tensorflow
+inflect
+librosa

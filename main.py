@@ -6,17 +6,21 @@ app = Flask(__name__)
 @app.route('/text-to-speech',methods = ['POST', 'GET'])
 def text_to_speech():
 
-    sentence = request.json['sentence']
+    #sentence = request.json['sentence']
+    request.args.get('sentence')
 
-    path_to_file = "2.wav" # ganti dengan text_to_speech_process()
+    path_to_file = "audio/2.wav" # ganti dengan text_to_speech_process()
 
-    '''return send_file(
+    
+    return send_file(
         path_to_file, 
         mimetype="audio/wav", 
         as_attachment=True, 
-        download_name="2.wav")'''
+        download_name="2.wav")
     
-    return jsonify({"response": "Hi " + sentence})
+
+    
+    #return jsonify({"response": "Hi " + sentence})
 
 
 if __name__ == '__main__':

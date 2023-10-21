@@ -1,5 +1,6 @@
 from flask import Flask, redirect, url_for, request, jsonify
 from flask import send_file
+import random
 #from text_to_speech import text_to_speech_process
 app = Flask(__name__)
 
@@ -9,14 +10,20 @@ def text_to_speech(sentence):
     #sentence = request.json['sentence']
     request.args.get('sentence')
 
-    path_to_file = "audio/2.wav" # ganti dengan text_to_speech_process()
+    a = random.randint(1,30)
+
+    print(a)
+
+    path_to_file = "audio/" + str(a) + ".wav" # ganti dengan text_to_speech_process()
+
+
 
     
     return send_file(
     path_to_file, 
     mimetype="audio/wav", 
     as_attachment=True, 
-    download_name="2.wav")
+    download_name="audio.wav")
 
     
     

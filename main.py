@@ -15,22 +15,14 @@ def text_to_speech(sentence):
     print(a)
 
     path_to_file = "audio/" + str(a) + ".wav" # ganti dengan text_to_speech_process()
-
-
-
     
     return send_file(
     path_to_file, 
     mimetype="audio/wav", 
     as_attachment=True, 
     download_name="audio.wav")
-
-    
-    
-
     
     return jsonify({"response": "Hi " + sentence})
 
-
 if __name__ == '__main__':
-   app.run(debug = True)
+    app.run(debug = True)
